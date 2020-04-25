@@ -13,6 +13,8 @@ urlpatterns = [
     path('village/',views.village),
     path('user/', views.userPage, name="user-page"),
 
+    path('account/', views.accountSettings, name='account'),
+
 
     path('create_order/<str:pk_test>/',views.createOrder,name="create_order"),
     path('update_order/<str:pk_test>/',views.updateOrder,name="update_order"),

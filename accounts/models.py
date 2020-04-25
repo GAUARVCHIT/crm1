@@ -3,12 +3,12 @@ from django.contrib.auth.models import User
 
 
 class Customers(models.Model):
-    user= models.OneToOneField(User,null=True, on_delete=models.CASCADE)
+    user= models.OneToOneField(User,null=True,blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
-    profile_pic= models.ImageField(null=True,blank=True)
+    profile_pic= models.ImageField(null=True,blank=True,default='profile1.png')
 
     def __str__(self):
         return self.name
