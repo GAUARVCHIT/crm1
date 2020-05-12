@@ -15,7 +15,7 @@ from django.contrib.auth.models import Group
 
 # Create your views here.
 
-@unauthenticated_user
+@unauthenticated_user 
 def registerPage(request):
     form = CreateUserForm()
 
@@ -128,12 +128,6 @@ def customers(request, pk_test):
     }
 
     return render(request, 'accounts/customers.html', context)
-
-
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['admin'])
-def village(request):
-    return render(request, 'folder/village.html')
 
 
 @login_required(login_url='login')

@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,14 @@ STATICFILES_DIRS=[
 ]
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'static/image')
+
+
+AWS_ACCESS_KEY_ID = 'AKIA22R6GZ4JVH75TN5K'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'dennisivy-crm1-bucket'
+AWS_S3_REGION_NAME = 'ap-south-1'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
