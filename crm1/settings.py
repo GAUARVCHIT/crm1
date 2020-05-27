@@ -20,7 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e)h$4ti+4i92174w=7iu@0j5cvq495(s0eha^1_h)ag6p8d1t&'
+
+# SECRET_KEY = 'e)h$4ti+4i92174w=7iu@0j5cvq495(s0eha^1_h)ag6p8d1t&'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,10 +138,10 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 MEDIA_ROOT= os.path.join(BASE_DIR,'static/image')
 
 
-AWS_ACCESS_KEY_ID = 'AKIA22R6GZ4JVH75TN5K'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'dennisivy-crm1-bucket'
-AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
